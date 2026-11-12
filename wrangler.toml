@@ -13,7 +13,7 @@
 #  Provider keys, Telegram token and settings are stored in KV from /admin.
 # ============================================================
 
-name = "technamooz-ai"
+name = "klv-ai"
 main = "src/index.js"
 compatibility_date = "2025-03-10"
 
