@@ -11,6 +11,7 @@ import {
   getMind, wipeMind, getSettings, rateLimit, log, bumpStat
 } from '../store.js';
 import { uidCookie, readCookie, isSecureRequest } from '../auth.js';
+import { parseAttachments } from '../attachments.js';
 import {
   listModels, providerStatus, startCompletion, describeProviderError
 } from '../providers.js';
@@ -224,8 +225,20 @@ async function getHistory(request, env) {
 async function setPrefs(request, env) {
   const settings = await getSettings(env);
   const { uid, profile } = await webUser(request, env, settings);
-  let body;
-  try { body = await request.json(); } catch { return jsonResp({ ok: false, error: 'JSON نامعتبر است.' }, 400); }
+  let body, attachmentParts = [], attachmentNames = [];
+  try {
+    if ((request.headers.get('content-type') || '').includes('multipart/form-data')) {
+      const form = await request.formData();
+      body = Object.fromEntries(['message','platform','model','persona','deep','regenerate'].map((key) => [key, form.get(key)]));
+      if (form.getAll('files').some((f) => f && typeof f.arrayBuffer === 'function')) {
+        const parsed = await parseAttachments(form);
+        attachmentParts = parsed.parts;
+        attachmentNames = parsed.names;
+      }
+    } else body = await request.json();
+  } catch (e) {
+    return jsonResp({ ok: false, error: String((e && e.message) || 'درخواست نامعتبر است.').slice(0, 240) }, 400);
+  }
 
   if (body.platform != null) {
     if (!PLATFORMS[body.platform]) return jsonResp({ ok: false, error: 'پلتفرم نامعتبر است.' }, 400);
@@ -295,8 +308,10 @@ async function chat(request, env, ctx) {
   }
 
   const mind = await getMind(env, 'web', uid);
-  const regenerate = !!body.regenerate;
+  const regenerate = body.regenerate === true || body.regenerate === 'true';
   let userText = sanitizeUserText(body.message || '');
+  const textualAttachments = attachmentParts.filter((p) => p.type === 'text').map((p) => p.text).join('');
+  if (textualAttachments) userText = sanitizeUserText(userText + textualAttachments);
   let replaceLast = false;
   let historyMind = mind;
 
@@ -308,7 +323,8 @@ async function chat(request, env, ctx) {
     historyMind = { ...mind, rounds: mind.rounds.slice(0, -1) };
   }
 
-  if (!userText) return jsonResp({ ok: false, error: 'متن پیام خالی است.' }, 400);
+  if (!userText && !attachmentParts.length) return jsonResp({ ok: false, error: 'متن پیام خالی است.' }, 400);
+  if (!userText) userText = 'لطفاً فایل(های) پیوست‌شده را تحلیل کن: ' + attachmentNames.join('، ');
   if (userText.length > LIMITS.messageMaxChars) {
     return jsonResp({ ok: false, error: 'متن پیام خیلی طولانی است.' }, 400);
   }
@@ -331,6 +347,11 @@ async function chat(request, env, ctx) {
     settings,
     deep: selection.deep
   });
+  const imageParts = attachmentParts.filter((p) => p.type === 'image_url');
+  if (imageParts.length) {
+    const last = messages[messages.length - 1];
+    last.content = [{ type: 'text', text: userText }, ...imageParts];
+  }
 
   let started;
   try {
