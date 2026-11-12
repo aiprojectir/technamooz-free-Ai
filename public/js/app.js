@@ -51,7 +51,8 @@
     abort: null,
     lastUserText: '',
     lastAnswer: '',
-    maintenance: false
+    maintenance: false,
+    selectedFiles: []
   };
 
   const els = {};
@@ -157,6 +158,9 @@
     els.composerForm = $('#composerForm');
     els.messageInput = $('#messageInput');
     els.btnSend = $('#btnSend');
+    els.fileInput = $('#fileInput');
+    els.btnAttach = $('#btnAttach');
+    els.attachmentList = $('#attachmentList');
     els.btnStop = $('#btnStop');
     els.btnDeep = $('#btnDeep');
     els.btnNewChat = $('#btnNewChat');
@@ -540,9 +544,19 @@
 
   /* ============================ send / stream ============================ */
 
+  function renderAttachments() {
+    if (!els.attachmentList) return;
+    els.attachmentList.hidden = !state.selectedFiles.length;
+    els.attachmentList.innerHTML = state.selectedFiles.map((file, i) =>
+      '<span class="attachment-chip" title="' + esc(file.name) + '">' +
+      '<span aria-hidden="true">📎</span><span class="attachment-name">' + esc(file.name) + '</span>' +
+      '<button type="button" data-remove-file="' + i + '" aria-label="حذف ' + esc(file.name) + '">×</button></span>'
+    ).join('');
+  }
+
   async function sendMessage(rawText, options = {}) {
     let text = String(rawText == null ? '' : rawText).trim();
-    if (!text || state.streaming || state.maintenance || !state.platform || !state.model) {
+    if ((!text && !state.selectedFiles.length) || state.streaming || state.maintenance || !state.platform || !state.model) {
       if (!state.model && text) {
         toast('اول از دکمهٔ «مدل» بالای صفحه یک مدل انتخاب کن.', 'err');
         openModelModal();
@@ -553,15 +567,17 @@
     let regenerate = !!options.regenerate;
     if (regenerate) text = state.lastUserText;
 
+    const filesToSend = regenerate ? [] : [...state.selectedFiles];
     if (els.messageInput && !regenerate) {
       els.messageInput.value = '';
       resizeInput();
       updateCharCount();
     }
+    if (!regenerate) { state.selectedFiles = []; renderAttachments(); }
 
     removeEmpty();
     removePreviousRegen();
-    if (!regenerate) appendMessage('user', text, {});
+    if (!regenerate) appendMessage('user', [text, ...filesToSend.map(f => '📎 ' + f.name)].filter(Boolean).join('\n'), {});
 
     const placeholder = appendMessage('bot', '', {});
     setBotTyping(placeholder);
@@ -574,19 +590,19 @@
     state.abort = controller;
 
     try {
+      const payload = new FormData();
+      payload.append('message', regenerate ? state.lastUserText : text);
+      payload.append('platform', state.platform);
+      payload.append('model', state.model);
+      payload.append('persona', state.persona);
+      payload.append('deep', String(state.deep));
+      payload.append('regenerate', String(regenerate));
+      for (const file of filesToSend) payload.append('files', file, file.name);
       const res = await fetch('/api/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         credentials: 'same-origin',
         signal: controller.signal,
-        body: JSON.stringify({
-          message: regenerate ? state.lastUserText : text,
-          platform: state.platform,
-          model: state.model,
-          persona: state.persona,
-          deep: state.deep,
-          regenerate
-        })
+        body: payload
       });
 
       if (!res.ok) {
@@ -1064,6 +1080,26 @@
       });
     }
     if (els.btnStop) els.btnStop.addEventListener('click', stopStreaming);
+    if (els.btnAttach && els.fileInput) els.btnAttach.addEventListener('click', () => els.fileInput.click());
+    if (els.fileInput) els.fileInput.addEventListener('change', () => {
+      const incoming = [...(els.fileInput.files || [])];
+      const allowed = /\.(png|jpe?g|webp|pdf|docx|xlsx|txt|md|csv)$/i;
+      for (const file of incoming) {
+        if (!allowed.test(file.name)) { toast('فرمت این فایل پشتیبانی نمی‌شود: ' + file.name, 'err'); continue; }
+        if (state.selectedFiles.length >= 5) { toast('حداکثر ۵ فایل را هم‌زمان می‌توانید ارسال کنید.', 'err'); break; }
+        if (file.size > 8 * 1024 * 1024) { toast('هر فایل باید حداکثر ۸ مگابایت باشد.', 'err'); continue; }
+        if (state.selectedFiles.some((x) => x.name === file.name && x.size === file.size && x.lastModified === file.lastModified)) continue;
+        state.selectedFiles.push(file);
+      }
+      els.fileInput.value = '';
+      renderAttachments();
+    });
+    if (els.attachmentList) els.attachmentList.addEventListener('click', (e) => {
+      const remove = e.target.closest('[data-remove-file]');
+      if (!remove) return;
+      state.selectedFiles.splice(Number(remove.dataset.removeFile), 1);
+      renderAttachments();
+    });
     if (els.messageInput) {
       els.messageInput.addEventListener('input', () => {
         resizeInput();
