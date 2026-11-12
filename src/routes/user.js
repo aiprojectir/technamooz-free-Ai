@@ -225,20 +225,8 @@ async function getHistory(request, env) {
 async function setPrefs(request, env) {
   const settings = await getSettings(env);
   const { uid, profile } = await webUser(request, env, settings);
-  let body, attachmentParts = [], attachmentNames = [];
-  try {
-    if ((request.headers.get('content-type') || '').includes('multipart/form-data')) {
-      const form = await request.formData();
-      body = Object.fromEntries(['message','platform','model','persona','deep','regenerate'].map((key) => [key, form.get(key)]));
-      if (form.getAll('files').some((f) => f && typeof f.arrayBuffer === 'function')) {
-        const parsed = await parseAttachments(form);
-        attachmentParts = parsed.parts;
-        attachmentNames = parsed.names;
-      }
-    } else body = await request.json();
-  } catch (e) {
-    return jsonResp({ ok: false, error: String((e && e.message) || 'درخواست نامعتبر است.').slice(0, 240) }, 400);
-  }
+  let body;
+  try { body = await request.json(); } catch { return jsonResp({ ok: false, error: 'JSON نامعتبر است.' }, 400); }
 
   if (body.platform != null) {
     if (!PLATFORMS[body.platform]) return jsonResp({ ok: false, error: 'پلتفرم نامعتبر است.' }, 400);
@@ -299,8 +287,20 @@ async function chat(request, env, ctx) {
     return jsonResp({ ok: false, error: 'تکناموز موقتاً در حال به‌روزرسانی است. لطفاً بعداً تلاش کنید.' }, 503);
   }
 
-  let body;
-  try { body = await request.json(); } catch { return jsonResp({ ok: false, error: 'JSON نامعتبر است.' }, 400); }
+  let body, attachmentParts = [], attachmentNames = [];
+  try {
+    if ((request.headers.get('content-type') || '').includes('multipart/form-data')) {
+      const form = await request.formData();
+      body = Object.fromEntries(['message','platform','model','persona','deep','regenerate'].map((key) => [key, form.get(key)]));
+      if (form.getAll('files').some((f) => f && typeof f.arrayBuffer === 'function')) {
+        const parsed = await parseAttachments(form);
+        attachmentParts = parsed.parts;
+        attachmentNames = parsed.names;
+      }
+    } else body = await request.json();
+  } catch (e) {
+    return jsonResp({ ok: false, error: String((e && e.message) || 'درخواست نامعتبر است.').slice(0, 240) }, 400);
+  }
 
   const limited = await rateLimit(env, 'chat:' + uid, LIMITS.chatRateLimit, LIMITS.chatRateWindowSec);
   if (!limited.ok) {
