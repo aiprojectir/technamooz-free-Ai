@@ -557,7 +557,7 @@
   async function sendMessage(rawText, options = {}) {
     let text = String(rawText == null ? '' : rawText).trim();
     if ((!text && !state.selectedFiles.length) || state.streaming || state.maintenance || !state.platform || !state.model) {
-      if (!state.model && text) {
+      if (!state.model && (text || state.selectedFiles.length)) {
         toast('اول از دکمهٔ «مدل» بالای صفحه یک مدل انتخاب کن.', 'err');
         openModelModal();
       }
