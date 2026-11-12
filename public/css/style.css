@@ -938,3 +938,19 @@ body.modal-open { overflow: hidden; }
   .topbar, .dock, .foot, .msg-actions, .toast-wrap { display: none !important; }
   body { background: #fff; color: #000; }
 }
+
+
+/* ---------------- attachments ---------------- */
+.attach-btn {
+  flex: none; width: 36px; height: 36px; display: inline-flex; align-items: center;
+  justify-content: center; border: 1px solid var(--line); border-radius: 10px;
+  color: var(--ink-2); background: var(--surface-2); font-size: 22px; line-height: 1;
+}
+.attach-btn:hover { color: var(--accent); border-color: var(--accent); }
+.attach-btn:disabled { opacity: .45; cursor: not-allowed; }
+.attachment-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 5px 4px 9px; }
+.attachment-list[hidden] { display: none; }
+.attachment-chip { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 4px 8px; border: 1px solid var(--line-soft); border-radius: 8px; background: var(--surface-2); color: var(--ink-2); font-size: 11px; }
+.attachment-name { max-width: min(220px, 52vw); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.attachment-chip button { color: var(--mut); font-size: 16px; line-height: 1; padding: 0 2px; }
+.attachment-chip button:hover { color: var(--danger); }
