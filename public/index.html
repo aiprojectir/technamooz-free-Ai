@@ -22,25 +22,37 @@
 </head>
 <body>
   <div class="ai-mascot-bg" aria-hidden="true">
-    <svg viewBox="0 0 320 360" role="presentation">
+    <svg viewBox="0 0 360 390" role="presentation">
       <defs>
-        <linearGradient id="mascotGlow" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="currentColor" stop-opacity=".95"/>
-          <stop offset="1" stop-color="currentColor" stop-opacity=".35"/>
+        <linearGradient id="mascotShell" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="currentColor" stop-opacity=".72"/>
+          <stop offset=".52" stop-color="currentColor" stop-opacity=".28"/>
+          <stop offset="1" stop-color="currentColor" stop-opacity=".58"/>
         </linearGradient>
+        <linearGradient id="mascotFace" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="currentColor" stop-opacity=".34"/>
+          <stop offset="1" stop-color="currentColor" stop-opacity=".08"/>
+        </linearGradient>
+        <filter id="mascotSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="7"/>
+        </filter>
       </defs>
-      <path d="M160 22v27" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      <circle cx="160" cy="18" r="10" fill="currentColor"/>
-      <rect x="53" y="66" width="214" height="190" rx="66" fill="url(#mascotGlow)" fill-opacity=".13" stroke="currentColor" stroke-width="8"/>
-      <rect x="76" y="91" width="168" height="133" rx="45" fill="currentColor" fill-opacity=".10" stroke="currentColor" stroke-width="5"/>
-      <ellipse cx="119" cy="151" rx="13" ry="18" fill="currentColor"/>
-      <ellipse cx="201" cy="151" rx="13" ry="18" fill="currentColor"/>
-      <path d="M126 190q34 27 68 0" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-      <path d="M53 133H30q-12 0-12 13v48q0 12 12 12h23M267 133h23q12 0 12 13v48q0 12-12 12h-23" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      <path d="M111 258v23q0 16 16 16h66q16 0 16-16v-23" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      <path d="M112 298l-23 31m119-31 23 31" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-      <path d="M91 330h-22m182 0h-22" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-      <path d="M44 55l-12-12m244 12 12-12M30 270l-12 12m272-12 12 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+      <circle cx="180" cy="180" r="145" fill="currentColor" opacity=".045"/>
+      <circle cx="180" cy="180" r="126" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 13" opacity=".25"/>
+      <path d="M180 20v26" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="180" cy="17" r="11" fill="currentColor" opacity=".75"/>
+      <circle cx="180" cy="17" r="19" fill="currentColor" opacity=".18" filter="url(#mascotSoftGlow)"/>
+      <path d="M65 115q-27 0-27 28v56q0 28 27 28M295 115q27 0 27 28v56q0 28-27 28" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round" opacity=".8"/>
+      <rect x="47" y="70" width="266" height="210" rx="82" fill="url(#mascotShell)" stroke="currentColor" stroke-width="7"/>
+      <rect x="72" y="94" width="216" height="160" rx="60" fill="url(#mascotFace)" stroke="currentColor" stroke-width="3" opacity=".95"/>
+      <path d="M115 164q15-23 30 0M215 164q15-23 30 0" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+      <path d="M145 201q35 29 70 0" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="116" cy="190" r="7" fill="currentColor" opacity=".35"/>
+      <circle cx="244" cy="190" r="7" fill="currentColor" opacity=".35"/>
+      <path d="M145 282v20q0 17 17 17h36q17 0 17-17v-20" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/>
+      <path d="M117 314q-17 12-24 34l-4 16h73v-40M243 314q17 12 24 34l4 16h-73v-40" fill="url(#mascotShell)" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+      <rect x="139" y="329" width="82" height="22" rx="11" fill="currentColor" opacity=".18"/>
+      <path d="M31 66l9-17 9 17 17 9-17 9-9 17-9-17-17-9zM310 275l6-12 6 12 12 6-12 6-6 12-6-12-12-6z" fill="currentColor" opacity=".48"/>
     </svg>
   </div>
 
