@@ -1,6 +1,6 @@
 // ============================================================
-//  Technamooz AI — technamooz-ai-version1.0.0
-//  Author: Amir Parsa (امیر پارسا)
+//  KLV-GPT — KLV-GPT-ai-version1.0.0
+//  Author: Majid Kalvandi (مجید کلوندی)
 //  src/routes/user.js — public web-chat API (SSE streaming)
 // ============================================================
 
@@ -89,7 +89,6 @@ async function getConfig(env) {
       description: APP.description
     },
     social: APP.social,
-    support: { url: APP.supportTelegram, handle: APP.supportHandle },
     platforms: platformList(),
     providers: status,
     settings: {
@@ -284,7 +283,7 @@ async function chat(request, env, ctx) {
     return jsonResp({ ok: false, error: 'دسترسی شما مسدود شده است. با پشتیبانی تماس بگیرید.' }, 403);
   }
   if (settings.maintenance) {
-    return jsonResp({ ok: false, error: 'تکناموز موقتاً در حال به‌روزرسانی است. لطفاً بعداً تلاش کنید.' }, 503);
+    return jsonResp({ ok: false, error: 'کلو جی‌پی‌تی موقتاً در حال به‌روزرسانی است. لطفاً بعداً تلاش کنید.' }, 503);
   }
 
   let body, attachmentParts = [], attachmentNames = [];
