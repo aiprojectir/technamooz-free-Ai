@@ -954,3 +954,67 @@ body.modal-open { overflow: hidden; }
 .attachment-name { max-width: min(220px, 52vw); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .attachment-chip button { color: var(--mut); font-size: 16px; line-height: 1; padding: 0 2px; }
 .attachment-chip button:hover { color: var(--danger); }
+
+
+/* ---------------- KLV-GPT refined chat layout ---------------- */
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 12% 8%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 42%),
+    radial-gradient(ellipse at 88% 78%, color-mix(in srgb, var(--accent) 5%, transparent), transparent 38%);
+  background-attachment: fixed;
+}
+.stage { min-height: 0; }
+.stage > .col { min-height: 0; }
+.chat-log {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.dock {
+  position: sticky;
+  top: 0;
+  bottom: auto;
+  flex: none;
+  padding: 12px 16px 14px;
+  background: var(--bg);
+  background: linear-gradient(to bottom, var(--bg) 72%, color-mix(in srgb, var(--bg) 0%, transparent));
+}
+.composer {
+  background: color-mix(in srgb, var(--surface) 94%, var(--accent) 6%);
+  box-shadow: 0 8px 26px color-mix(in srgb, var(--ink) 7%, transparent);
+}
+#messageInput {
+  resize: vertical;
+  min-height: 44px;
+  max-height: min(42dvh, 420px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  touch-action: pan-y;
+}
+@media (max-width: 640px) {
+  .stage > .col { padding-inline: 10px; }
+  .dock { padding: 9px 2px 11px; }
+  .composer { border-radius: 13px; padding: 7px 8px; }
+  #messageInput {
+    min-height: 48px;
+    max-height: 34dvh;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .c-tools { gap: 5px; padding-bottom: 7px; }
+  .tool-btn { font-size: 10.5px; padding: 5px 8px; }
+  .c-row { gap: 6px; }
+  .send-btn, .attach-btn { min-width: 38px; min-height: 38px; }
+  .c-foot { gap: 6px; font-size: 9px; }
+  .foot-hint { white-space: normal; line-height: 1.45; }
+  .chat-log { padding-top: 12px; }
+  .hero-title { font-size: clamp(25px, 8vw, 34px); }
+  .hero-sub { font-size: 13px; }
+}
+@media (max-width: 380px) {
+  .brand-name { font-size: 13px; }
+  .topbar-in { padding-inline: 9px; }
+  .c-tools { overflow-x: auto; }
+  .foot-hint { display: none; }
+}
