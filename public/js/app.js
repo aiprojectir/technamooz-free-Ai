@@ -1,7 +1,7 @@
 // ============================================================
 //  KLV-GPT — KLV-GPT-ai-version1.0.0
 //  Author: Majid Kalvandi (مجید کلوندی)
-//  public/js/app.js — public web chat (paper/console UI, 5 themes)
+//  public/js/app.js — public web chat (KLV luminous blue theme + alternate themes)
 // ============================================================
 
 (() => {
@@ -13,13 +13,14 @@
   /* ============================ themes ============================ */
 
   const THEMES = [
+    { id: 'klv',    label: 'KLV — آبی نئونی',    swatch: '#159cff', dark: true },
     { id: 'night',  label: 'شب — مشکی برنزی',   swatch: '#d9b778', dark: true },
     { id: 'day',    label: 'روز — کاغذ سفید',    swatch: '#0e7a6d', dark: false },
     { id: 'sea',    label: 'دریا — آبی ذغالی',   swatch: '#7cc7ef', dark: true },
     { id: 'sand',   label: 'شن — کاغذ گرم',      swatch: '#a35c25', dark: false },
     { id: 'forest', label: 'جنگل — کاغذ سبز',    swatch: '#7fc79b', dark: true }
   ];
-  const THEME_KEY = 'tm-theme-v2';
+  const THEME_KEY = 'tm-theme-v3';
   const PREFS_KEY = 'tm-prefs';
 
   // apply saved theme synchronously (before first paint in most cases)
