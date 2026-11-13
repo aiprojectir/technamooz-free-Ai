@@ -440,7 +440,7 @@ Account ID و API Token کلادفلر را در پنل ادمین وارد کن
 
 ### 🧠 KLV-GPT — `v1.0.0`
 
-**ساختهٔ [مجید کلوندی](https://t.me/KLV-GPT) با ❤️ روی Cloudflare Workers**
+**ساخته شده توسط مجید کلوندی با ❤️ روی Cloudflare Workers**
 
 
 <br/>
