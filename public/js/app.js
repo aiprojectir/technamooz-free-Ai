@@ -151,7 +151,6 @@
     els.btnTheme = $('#btnTheme');
     els.themeMenu = $('#themeMenu');
     els.themeOptions = $('#themeOptions');
-    els.btnSupportTop = $('#btnSupportTop');
     els.maintenance = $('#maintenance');
     els.announce = $('#announce');
     els.chatLog = $('#chatLog');
@@ -167,7 +166,6 @@
     els.btnReset = $('#btnReset');
     els.charCount = $('#charCount');
     els.streamState = $('#streamState');
-    els.socialLinks = $('#socialLinks');
     els.footVersion = $('#footVersion');
     els.modalModel = $('#modalModel');
     els.platformTabs = $('#platformTabs');
@@ -180,11 +178,6 @@
     els.modalPersona = $('#modalPersona');
     els.personaGrid = $('#personaGrid');
     els.personaCurrentLabel = $('#personaCurrentLabel');
-    els.modalSupport = $('#modalSupport');
-    els.supportSocials = $('#supportSocials');
-    els.feedbackForm = $('#feedbackForm');
-    els.feedbackText = $('#feedbackText');
-    els.feedbackMsg = $('#feedbackMsg');
     els.modalReset = $('#modalReset');
     els.toastWrap = $('#toastWrap');
   }
