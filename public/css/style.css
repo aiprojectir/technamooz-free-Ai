@@ -1068,3 +1068,286 @@ body { isolation: isolate; }
 @media (max-width: 380px) {
   .composer-size-hint { font-size: 8px; }
 }
+
+
+/* ============================================================
+   KLV-GPT signature theme — luminous blue / glass interface
+   Inspired by the supplied KLV-GPT Agent Chat reference.
+   ============================================================ */
+html[data-theme="klv"] {
+  --bg: #061a43;
+  --bg-soft: #09265c;
+  --surface: rgba(20, 55, 118, .72);
+  --surface-2: rgba(39, 91, 177, .55);
+  --ink: #f4f8ff;
+  --ink-2: #d0e2ff;
+  --mut: #9bb7e8;
+  --line: rgba(151, 194, 255, .28);
+  --line-soft: rgba(151, 194, 255, .16);
+  --accent: #36b8ff;
+  --accent-ink: #061b48;
+  --accent-soft: rgba(54, 184, 255, .18);
+  --danger: #ff7894;
+  --ok: #7ee7cb;
+  --bubble: rgba(24, 65, 145, .82);
+  --code-bg: rgba(2, 14, 43, .85);
+  --topbar: rgba(4, 23, 63, .68);
+  --tint: rgba(54, 184, 255, .09);
+  color-scheme: dark;
+}
+html[data-theme="klv"] body {
+  background:
+    radial-gradient(ellipse at 88% 12%, rgba(70, 139, 255, .48), transparent 36%),
+    radial-gradient(ellipse at 10% 58%, rgba(42, 155, 255, .38), transparent 42%),
+    radial-gradient(ellipse at 52% 105%, rgba(92, 103, 255, .34), transparent 42%),
+    linear-gradient(135deg, #04163d 0%, #0a3477 52%, #102b72 100%);
+  background-attachment: fixed;
+}
+html[data-theme="klv"] .topbar {
+  background: rgba(5, 24, 66, .58);
+  border-bottom-color: rgba(169, 205, 255, .16);
+  box-shadow: 0 8px 36px rgba(0, 9, 38, .16);
+}
+html[data-theme="klv"] .brand,
+html[data-theme="klv"] .chip-value { color: #f7fbff; }
+html[data-theme="klv"] .brand img {
+  filter: drop-shadow(0 0 9px rgba(77, 183, 255, .85));
+}
+html[data-theme="klv"] .chip,
+html[data-theme="klv"] .conn-pill,
+html[data-theme="klv"] .icon-btn {
+  background: rgba(71, 119, 205, .22);
+  border-color: rgba(177, 211, 255, .25);
+  color: #e8f3ff;
+  backdrop-filter: blur(14px);
+}
+html[data-theme="klv"] .stage > .col {
+  max-width: 68rem;
+  padding-inline: clamp(14px, 3vw, 34px);
+}
+html[data-theme="klv"] .chat-log {
+  padding-block: 24px 20px;
+}
+html[data-theme="klv"] .empty-state {
+  position: relative;
+  isolation: isolate;
+  max-width: 58rem;
+  margin: auto;
+  padding: clamp(24px, 5vw, 54px);
+  border: 1px solid rgba(183, 216, 255, .25);
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(16, 57, 132, .68), rgba(44, 101, 191, .28));
+  box-shadow: 0 24px 80px rgba(0, 9, 42, .24), inset 0 1px rgba(255,255,255,.13);
+  backdrop-filter: blur(16px);
+}
+html[data-theme="klv"] .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid rgba(192, 220, 255, .35);
+  border-radius: 999px;
+  background: rgba(168, 200, 255, .13);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  box-shadow: 0 0 28px rgba(67, 163, 255, .16);
+}
+html[data-theme="klv"] .hero-eyebrow::before {
+  content: "✦";
+  color: #9ce8ff;
+  font-size: 20px;
+  text-shadow: 0 0 12px #6ccaff;
+}
+html[data-theme="klv"] .hero-rule {
+  width: 74px;
+  height: 3px;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #8eeaff, #477dff);
+  margin-block: 8px 0;
+}
+html[data-theme="klv"] .hero-title {
+  color: #fff;
+  font-size: clamp(30px, 5vw, 48px);
+  text-shadow: 0 4px 28px rgba(1, 15, 57, .3);
+}
+html[data-theme="klv"] .hero-sub {
+  color: #d7e8ff;
+  font-size: clamp(13px, 1.6vw, 15px);
+  max-width: 48rem;
+}
+html[data-theme="klv"] .quick-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  border: 0;
+}
+html[data-theme="klv"] .quick-chip {
+  min-width: 0;
+  border: 1px solid rgba(186, 215, 255, .2);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(4, 28, 81, .3);
+  color: #eef6ff;
+}
+html[data-theme="klv"] .quick-chip b { color: #fff; }
+html[data-theme="klv"] .quick-chip span { color: #bfd8ff; }
+html[data-theme="klv"] .quick-chip:hover {
+  background: rgba(48, 132, 236, .3);
+  border-color: rgba(117, 211, 255, .58);
+}
+html[data-theme="klv"] .hero-logo {
+  display: block;
+  width: clamp(76px, 11vw, 118px);
+  height: auto;
+  margin-inline-start: auto;
+  filter: drop-shadow(0 0 24px rgba(66, 180, 255, .55));
+}
+html[data-theme="klv"] .dock {
+  position: sticky;
+  top: auto;
+  bottom: 0;
+  z-index: 30;
+  padding: 12px clamp(12px, 3vw, 34px) calc(12px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to top, rgba(4, 21, 61, .96), rgba(4, 21, 61, .72) 72%, transparent);
+}
+html[data-theme="klv"] .composer {
+  max-width: 68rem;
+  border: 2px solid rgba(218, 235, 255, .78);
+  border-radius: 24px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(246, 250, 255, .97), rgba(218, 232, 255, .95));
+  box-shadow: 0 12px 42px rgba(0, 13, 55, .28), 0 0 0 7px rgba(151, 193, 255, .12);
+}
+html[data-theme="klv"] .composer:focus-within {
+  border-color: #78d9ff;
+  box-shadow: 0 12px 42px rgba(0, 13, 55, .28), 0 0 0 7px rgba(79, 184, 255, .2);
+}
+html[data-theme="klv"] .c-tools {
+  align-items: center;
+  padding: 0 2px 8px;
+}
+html[data-theme="klv"] .tool-btn {
+  color: #31558f;
+  border-color: rgba(73, 117, 190, .2);
+  background: rgba(255,255,255,.42);
+}
+html[data-theme="klv"] .tool-btn:hover {
+  color: #103c83;
+  border-color: #5baeff;
+  background: #fff;
+}
+html[data-theme="klv"] #btnDeep.active {
+  color: #fff;
+  background: linear-gradient(135deg, #315de0, #3c9dff);
+  border-color: transparent;
+}
+html[data-theme="klv"] .composer-size-hint { color: #6d83ad; }
+html[data-theme="klv"] .composer-size-controls {
+  padding: 4px;
+  border: 2px solid #ffbd32;
+  border-radius: 14px;
+  background: rgba(255, 190, 50, .08);
+  box-shadow: 0 0 0 3px rgba(255, 190, 50, .08);
+}
+html[data-theme="klv"] .composer-size-controls button {
+  width: 42px;
+  height: 38px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #456fd5, #244ba9);
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  box-shadow: 0 5px 12px rgba(20, 56, 133, .22);
+}
+html[data-theme="klv"] .composer-size-controls button:hover {
+  color: #fff;
+  background: linear-gradient(145deg, #5b91f3, #315fcb);
+}
+html[data-theme="klv"] #messageInput {
+  min-height: 54px;
+  color: #17376f;
+  font-size: 16px;
+}
+html[data-theme="klv"] #messageInput::placeholder { color: #7589b4; }
+html[data-theme="klv"] .send-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #7185ff, #3b58e8);
+  box-shadow: 0 8px 20px rgba(59, 88, 232, .28);
+}
+html[data-theme="klv"] .attach-btn {
+  color: #4264a5;
+  background: rgba(255,255,255,.7);
+  border-color: rgba(65, 103, 174, .2);
+}
+html[data-theme="klv"] .c-foot {
+  color: #6b80aa;
+  padding-top: 7px;
+}
+html[data-theme="klv"] .foot {
+  border-top-color: rgba(187, 215, 255, .18);
+  color: #d1e4ff;
+  background: rgba(4, 21, 61, .3);
+}
+html[data-theme="klv"] .ai-mascot-bg {
+  width: min(52vw, 520px);
+  top: 17%;
+  inset-inline-end: 4vw;
+  opacity: .22;
+  color: #67caff;
+  filter: drop-shadow(0 0 34px rgba(48, 164, 255, .7));
+}
+html[data-theme="klv"] .msg.bot .body {
+  background: rgba(18, 57, 129, .62);
+  border: 1px solid rgba(171, 210, 255, .18);
+  border-radius: 18px 18px 18px 5px;
+  color: #f1f7ff;
+  box-shadow: 0 10px 32px rgba(0, 12, 48, .16);
+}
+html[data-theme="klv"] .msg.user .body {
+  background: linear-gradient(135deg, #355fd5, #416fe4);
+  color: #fff;
+  border-radius: 18px 18px 5px 18px;
+  box-shadow: 0 8px 22px rgba(0, 12, 48, .18);
+}
+html[data-theme="klv"] .modal-card {
+  background: #0b2456;
+  border-color: rgba(161, 204, 255, .28);
+}
+html[data-theme="klv"] .modal-head { background: #0b2456; }
+@media (max-width: 640px) {
+  html[data-theme="klv"] .stage > .col { padding-inline: 10px; }
+  html[data-theme="klv"] .empty-state {
+    padding: 22px 16px;
+    border-radius: 22px;
+  }
+  html[data-theme="klv"] .quick-list { grid-template-columns: 1fr; }
+  html[data-theme="klv"] .dock { padding: 8px 8px calc(9px + env(safe-area-inset-bottom, 0px)); }
+  html[data-theme="klv"] .composer { padding: 9px; border-radius: 18px; }
+  html[data-theme="klv"] .composer-size-hint { display: none; }
+  html[data-theme="klv"] .composer-size-controls button { width: 34px; height: 32px; }
+  html[data-theme="klv"] .send-btn { width: 46px; height: 46px; }
+  html[data-theme="klv"] .ai-mascot-bg {
+    width: min(76vw, 310px);
+    top: 24%;
+    inset-inline-end: 0;
+    opacity: .13;
+  }
+}
+
+/* Keep the message composer anchored to the bottom, like the supplied reference. */
+html[data-theme="klv"] .stage > .col {
+  display: flex;
+  flex-direction: column-reverse;
+}
+html[data-theme="klv"] .dock {
+  top: auto;
+  bottom: 0;
+}
