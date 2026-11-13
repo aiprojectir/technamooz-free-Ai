@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Technamooz AI — تکناموز">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="KLV-GPT — کلو جی‌پی‌تی">
   <defs>
     <linearGradient id="tmBg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b1020"/>
@@ -39,7 +39,7 @@
   <g filter="url(#tmGlow)">
     <path d="M128 190 h256 l-30 52h-88v178h-96 l2-78h-40l-2-74h40z" fill="none" opacity="0"/>
     <text x="256" y="342" font-family="'Segoe UI', Tahoma, sans-serif" font-size="216" font-weight="800"
-          text-anchor="middle" fill="url(#tmTn)" letter-spacing="6">TN</text>
+          text-anchor="middle" fill="url(#tmTn)" letter-spacing="2">KLV</text>
   </g>
 
   <!-- AI spark node on top of the N -->
@@ -50,8 +50,8 @@
   </g>
 
   <!-- footer word -->
-  <text x="256" y="428" text-anchor="middle" font-family="Tahoma, 'Segoe UI', sans-serif" font-size="34"
-        font-weight="700" fill="#9fb4ff">تکناموز</text>
-  <text x="256" y="462" text-anchor="middle" font-family="Tahoma, 'Segoe UI', sans-serif" font-size="20"
-        font-weight="600" fill="#22d3ee" letter-spacing="4">TECHNAMOOZ AI</text>
+  <text x="256" y="428" text-anchor="middle" font-family="Tahoma, 'Segoe UI', sans-serif" font-size="30"
+        font-weight="700" fill="#9fb4ff">کلو جی‌پی‌تی</text>
+  <text x="256" y="462" text-anchor="middle" font-family="Tahoma, 'Segoe UI', sans-serif" font-size="17"
+        font-weight="600" fill="#22d3ee" letter-spacing="4">KLV-GPT</text>
 </svg>
