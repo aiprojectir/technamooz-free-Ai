@@ -1,6 +1,6 @@
 // ============================================================
-//  Technamooz AI — technamooz-ai-version1.0.0
-//  Author: Amir Parsa (امیر پارسا)
+//  KLV-GPT — KLV-GPT-ai-version1.0.0
+//  Author: Majid Kalvandi (مجید کلوندی)
 //  public/js/admin.js — secure admin panel (CSRF protected)
 // ============================================================
 
@@ -18,7 +18,7 @@
   ];
 
   const VIEW_META = {
-    overview: ['نمای کلی', 'وضعیت کلی تکناموز در یک نگاه'],
+    overview: ['نمای کلی', 'وضعیت کلی کلو جی‌پی‌تی در یک نگاه'],
     keys: ['کلیدها و اتصال‌ها', 'مدیریت کلیدهای چهار پلتفرم و Cloudflare'],
     models: ['مدل‌ها', 'لیست واقعی مدل‌های هر پلتفرم'],
     telegram: ['ربات تلگرام', 'توکن، وبهوک، ادمین‌ها و ارسال همگانی'],
@@ -338,8 +338,8 @@
             '<button class="quick-action" type="button" data-goto="settings">⚙️ تنظیمات عمومی</button>' +
             '<button class="quick-action" type="button" data-goto="security">🛡️ امنیت پنل</button>' +
           '</div>' +
-          '<p class="muted tiny" style="margin-top:12px">نسخه: ' + esc((data.app && data.app.package) || 'technamooz-ai-version1.0.0') +
-          ' · ساختهٔ ' + esc((data.app && data.app.author) || 'امیر پارسا') + '</p>' +
+          '<p class="muted tiny" style="margin-top:12px">نسخه: ' + esc((data.app && data.app.package) || 'KLV-GPT-ai-version1.0.0') +
+          ' · ساختهٔ ' + esc((data.app && data.app.author) || 'مجید کلوندی') + '</p>' +
         '</section>' +
       '</div>';
   }
@@ -590,7 +590,7 @@
         '<section class="admin-card">' +
           '<div class="card-head"><h3>🧪 تست ربات</h3></div>' +
           '<p class="muted small">یک پیام آزمایشی به ادمین‌های ثبت‌شده می‌فرستد.</p>' +
-          '<label class="field"><span>متن پیام</span><input id="tgTestText" type="text" value="✅ پیام آزمایشی تکناموز — اتصال ربات برقرار است." /></label>' +
+          '<label class="field"><span>متن پیام</span><input id="tgTestText" type="text" value="✅ پیام آزمایشی کلو جی‌پی‌تی — اتصال ربات برقرار است." /></label>' +
           '<div class="card-actions"><button class="btn primary tiny" type="button" data-tg-test>🧪 ارسال تست</button><span class="test-result" id="tg-test-result"></span></div>' +
         '</section>' +
         '<section class="admin-card wide">' +
