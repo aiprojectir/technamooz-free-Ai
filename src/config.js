@@ -1,29 +1,29 @@
 // ============================================================
-//  Technamooz AI — technamooz-ai-version1.0.0
-//  Author: Amir Parsa (امیر پارسا)
+//  KLV-GPT — KLV-GPT-ai-version1.0.0
+//  Author: Majid Kalvandi (مجید کلوندی)
 //  src/config.js — application metadata, providers, defaults, limits
 // ============================================================
 
 export const APP = {
-  name: 'Technamooz AI',
-  faName: 'تکناموز',
-  package: 'technamooz-ai-version1.0.0',
+  name: 'KLV-GPT',
+  faName: 'کلو جی‌پی‌تی',
+  package: 'KLV-GPT-ai-version1.0.0',
   version: '1.0.0',
-  author: 'امیر پارسا',
-  authorEn: 'Amir Parsa',
-  tagline: 'دستیار هوش مصنوعی حرفه‌ای تکناموز',
+  author: 'مجید کلوندی',
+  authorEn: 'Majid Kalvandi',
+  tagline: 'دستیار هوش مصنوعی حرفه‌ای KLV-GPT',
   description: 'پلتفرم چت هوش مصنوعی، ربات تلگرام و پنل مدیریت روی Cloudflare Workers',
   defaultAdminUser: 'admin',
   defaultAdminPass: 'admin',
-  supportTelegram: 'https://t.me/technamooz_support',
-  supportHandle: '@technamooz_support',
-  website: 'https://technamooz.ai',
+  supportTelegram: 'https://t.me/KLV-GPT_support',
+  supportHandle: '@KLV-GPT_support',
+  website: 'https://KLV-GPT.ai',
   social: [
-    { nameFa: 'تلگرام', handle: '@technamooz', url: 'https://t.me/technamooz', icon: '✈️' },
-    { nameFa: 'اینستاگرام', handle: '@technamooz', url: 'https://instagram.com/technamooz', icon: '📸' },
-    { nameFa: 'یوتیوب', handle: '@technamooz', url: 'https://youtube.com/@technamooz', icon: '▶️' },
-    { nameFa: 'گیت‌هاب', handle: '@technamooz', url: 'https://github.com/technamooz', icon: '🐙' },
-    { nameFa: 'توییتر (X)', handle: '@technamooz', url: 'https://x.com/technamooz', icon: '🐦' }
+    { nameFa: 'تلگرام', handle: '@KLV-GPT', url: 'https://t.me/KLV-GPT', icon: '✈️' },
+    { nameFa: 'اینستاگرام', handle: '@KLV-GPT', url: 'https://instagram.com/KLV-GPT', icon: '📸' },
+    { nameFa: 'یوتیوب', handle: '@KLV-GPT', url: 'https://youtube.com/@KLV-GPT', icon: '▶️' },
+    { nameFa: 'گیت‌هاب', handle: '@KLV-GPT', url: 'https://github.com/KLV-GPT', icon: '🐙' },
+    { nameFa: 'توییتر (X)', handle: '@KLV-GPT', url: 'https://x.com/KLV-GPT', icon: '🐦' }
   ]
 };
 
@@ -106,7 +106,7 @@ export const PLATFORMS = {
 export const PLATFORM_ORDER = ['workersai', 'openrouter', 'orcarouter', 'onerouter'];
 
 export const DEFAULT_SETTINGS = {
-  siteTitle: 'Technamooz AI | تکناموز',
+  siteTitle: 'KLV-GPT | کلو جی‌پی‌تی',
   announcement: '',
   defaultPlatform: 'workersai',
   defaultModel: {
@@ -126,7 +126,7 @@ export const DEFAULT_SETTINGS = {
   fallbackEnabled: true,
   maintenance: false,
   extraInstructions: '',
-  feedbackPrompt: 'پیام شما برای تیم تکناموز ثبت شد ❤️'
+  feedbackPrompt: 'پیام شما برای تیم کلو جی‌پی‌تی ثبت شد ❤️'
 };
 
 export const LIMITS = {
