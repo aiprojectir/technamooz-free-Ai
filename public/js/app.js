@@ -994,7 +994,6 @@
           ? 'فضای ذخیره‌سازی KV هنوز تنظیم نشده است. مدیر باید طبق README یک namespace با نام DB بسازد و شناسهٔ آن را در wrangler.toml قرار دهد.'
           : 'دریافت تنظیمات از سرور ناموفق بود. اتصال اینترنت و تنظیمات Worker را بررسی کن.') + '</p>' +
         '<p class="mini-note" dir="ltr">' + esc(message) + '</p>' +
-        '<a class="btn primary" style="align-self:flex-start" href="https://t.me/KLV-GPT_support" target="_blank" rel="noopener">🆘 پشتیبانی @KLV-GPT_support</a>' +
       '</div>';
     if (els.btnSend) els.btnSend.disabled = true;
     if (els.messageInput) els.messageInput.disabled = true;
