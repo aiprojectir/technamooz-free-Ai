@@ -1,5 +1,5 @@
 // ============================================================
-//  KLV-GPT — KLV-GPT-ai-version1.0.0
+//  KLV-GPT — klv-gpt-version1.0.0
 //  Author: Majid Kalvandi (مجید کلوندی)
 //  src/config.js — application metadata, providers, defaults, limits
 // ============================================================
@@ -15,16 +15,7 @@ export const APP = {
   description: 'پلتفرم چت هوش مصنوعی، ربات تلگرام و پنل مدیریت روی Cloudflare Workers',
   defaultAdminUser: 'admin',
   defaultAdminPass: 'admin',
-  supportTelegram: 'https://t.me/KLV-GPT_support',
-  supportHandle: '@KLV-GPT_support',
-  website: 'https://KLV-GPT.ai',
-  social: [
-    { nameFa: 'تلگرام', handle: '@KLV-GPT', url: 'https://t.me/KLV-GPT', icon: '✈️' },
-    { nameFa: 'اینستاگرام', handle: '@KLV-GPT', url: 'https://instagram.com/KLV-GPT', icon: '📸' },
-    { nameFa: 'یوتیوب', handle: '@KLV-GPT', url: 'https://youtube.com/@KLV-GPT', icon: '▶️' },
-    { nameFa: 'گیت‌هاب', handle: '@KLV-GPT', url: 'https://github.com/KLV-GPT', icon: '🐙' },
-    { nameFa: 'توییتر (X)', handle: '@KLV-GPT', url: 'https://x.com/KLV-GPT', icon: '🐦' }
-  ]
+  social: []
 };
 
 export const KV_KEYS = {
