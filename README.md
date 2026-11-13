@@ -1,14 +1,13 @@
 <div align="center">
 
-<img src="./assets/banner.svg" alt="Technamooz AI — تکناموز" width="100%"/>
+<img src="./assets/banner.svg" alt="KLV-GPT — کلو جی‌پی‌تی" width="100%"/>
 
 <br/>
 
-[![Version](https://img.shields.io/badge/version-1.0.0-22d3ee?style=for-the-badge&logo=semanticweb&logoColor=white)](https://github.com/technamooz)
+[![Version](https://img.shields.io/badge/version-1.0.0-22d3ee?style=for-the-badge&logo=semanticweb&logoColor=white)](https://github.com/KLV-GPT)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![No Python](https://img.shields.io/badge/Python-Not%20Needed-ef4444?style=for-the-badge&logo=python&logoColor=white)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa?style=for-the-badge)](#-مجوز)
-[![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/technamooz)
 
 ![Serverless](https://img.shields.io/badge/Serverless-100%25-success?style=flat-square)
 ![Models](https://img.shields.io/badge/AI%20Providers-4-blueviolet?style=flat-square)
@@ -37,54 +36,6 @@
 </div>
 
 <div dir="rtl">
-
-## 🌐 ما را دنبال کنید
-
-<div align="center">
-
-[![Website](https://img.shields.io/badge/🌐%20وب‌سایت-technamooz.ir-0ea5e9?style=for-the-badge)](https://technamooz.ir)
-[![Telegram](https://img.shields.io/badge/تلگرام-@technamooz-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/technamooz)
-[![Instagram](https://img.shields.io/badge/اینستاگرام-technamooz-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/technamooz)
-
-[![YouTube](https://img.shields.io/badge/یوتیوب-Technamooz-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@technamooz)
-[![GitHub](https://img.shields.io/badge/گیت‌هاب-technamooz-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/technamooz)
-[![X](https://img.shields.io/badge/توییتر-@technamooz-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/technamooz)
-
-[![Support](https://img.shields.io/badge/💬%20پشتیبانی-@technamooz__support-2ea44f?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/technamooz_support)
-
-</div>
-
-> 👨‍💻 **سازنده: امیر پارسا (Amir Parsa)** — با ❤️ برای جامعهٔ فارسی‌زبان
-
-<br/>
-
-## 🎬 آموزش کامل ویدیویی
-
-نصب، راه‌اندازی و استفادهٔ کامل از پروژه را **قدم‌به‌قدم** در ویدیوی زیر ببینید:
-
-<div align="center">
-
-[![آموزش کامل Technamooz AI](https://img.youtube.com/vi/aMuzdPpteUA/maxresdefault.jpg)](https://youtu.be/aMuzdPpteUA?si=LD1V5J38PJhotPF9)
-
-### [▶️ تماشای آموزش در یوتیوب](https://youtu.be/aMuzdPpteUA?si=LD1V5J38PJhotPF9)
-
-</div>
-
-<br/>
-
-## 📊 پروژه در یک نگاه
-
-<div align="center">
-
-| 🧩 | 🔌 | 🌐 | 🤖 | 🛡️ |
-|:---:|:---:|:---:|:---:|:---:|
-| **۱۶**<br/>شخصیت تخصصی | **۴**<br/>سرویس‌دهندهٔ AI | **۱**<br/>چت وب RTL | **۱۵+**<br/>دستور تلگرام | **۱**<br/>پنل ادمین جدا |
-
-| ⚡ | 💸 | 🧠 | 📡 | 🔒 |
-|:---:|:---:|:---:|:---:|:---:|
-| **SSE**<br/>استریم واقعی | **رایگان**<br/>روی پلن Free | **حافظه**<br/>بلندمدت هر کاربر | **۶ ساعت**<br/>کش مدل‌ها در KV | **PBKDF2**<br/>+ CSRF + CSP |
-
-</div>
 
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
@@ -159,7 +110,7 @@ flowchart LR
     A([🛡️ ادمین]) -->|/admin| W
 
     subgraph CF[☁️ Cloudflare]
-        W{{⚡ Worker<br/>Technamooz AI}}
+        W{{⚡ Worker<br/>KLV-GPT}}
         KV[(🗄️ KV<br/>حافظه · کاربران · کش)]
         WAI[🧠 Workers AI]
         W <--> KV
@@ -362,7 +313,7 @@ ADMIN_PBKDF2_ITERATIONS = "100000"
 <summary><b>📁 نمایش ساختار کامل (کلیک کنید)</b></summary>
 
 ```text
-technamooz-ai/
+KLV-GPT-ai/
 ├── wrangler.toml              # KV + AI binding + assets + vars
 ├── package.json               # scripts: setup/check/test/assets/deploy
 ├── public/
@@ -471,15 +422,15 @@ Account ID و API Token کلادفلر را در پنل ادمین وارد کن
 ## 🤝 مشارکت و حمایت
 
 - ⭐ اگر پروژه به دردتان خورد، **به آن ستاره بدهید**.
-- 🐛 باگ پیدا کردید؟ یک **Issue** باز کنید یا به [@technamooz_support](https://t.me/technamooz_support) پیام بدهید.
+- 🐛 باگ پیدا کردید؟ یک **Issue** باز کنید یا به [@KLV-GPT_support](https://t.me/KLV-GPT_support) پیام بدهید.
 - 🔀 پیشنهاد یا بهبود دارید؟ **Pull Request** بفرستید.
-- 📺 برای آموزش‌های بیشتر، کانال [یوتیوب](https://youtube.com/@technamooz) را دنبال کنید.
+- 📺 برای آموزش‌های بیشتر، کانال [یوتیوب](https://youtube.com/@KLV-GPT) را دنبال کنید.
 
 <br/>
 
 ## 📜 مجوز
 
-**MIT** — استفاده، تغییر و انتشار با ذکر نام **امیر پارسا (Amir Parsa)** و پروژهٔ **Technamooz AI** آزاد است.
+**MIT** — استفاده، تغییر و انتشار با ذکر نام **مجید کلوندی (Majid Kalvandi)** و پروژهٔ **KLV-GPT** آزاد است.
 
 </div>
 
@@ -487,16 +438,10 @@ Account ID و API Token کلادفلر را در پنل ادمین وارد کن
 
 <div align="center">
 
-### 🧠 Technamooz AI — `v1.0.0`
+### 🧠 KLV-GPT — `v1.0.0`
 
-**ساختهٔ [امیر پارسا](https://t.me/technamooz) با ❤️ روی Cloudflare Workers**
+**ساختهٔ [مجید کلوندی](https://t.me/KLV-GPT) با ❤️ روی Cloudflare Workers**
 
-[![Website](https://img.shields.io/badge/🌐-technamooz.ir-0ea5e9?style=flat-square)](https://technamooz.ir)
-[![Telegram](https://img.shields.io/badge/Telegram-@technamooz-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/technamooz)
-[![Instagram](https://img.shields.io/badge/Instagram-technamooz-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://instagram.com/technamooz)
-[![YouTube](https://img.shields.io/badge/YouTube-Technamooz-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://youtube.com/@technamooz)
-[![GitHub](https://img.shields.io/badge/GitHub-technamooz-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/technamooz)
-[![X](https://img.shields.io/badge/X-@technamooz-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/technamooz)
 
 <br/>
 
