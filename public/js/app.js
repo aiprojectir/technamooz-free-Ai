@@ -166,6 +166,8 @@
     els.btnReset = $('#btnReset');
     els.charCount = $('#charCount');
     els.streamState = $('#streamState');
+    els.btnComposerSmaller = $('#btnComposerSmaller');
+    els.btnComposerLarger = $('#btnComposerLarger');
     els.footVersion = $('#footVersion');
     els.modalModel = $('#modalModel');
     els.platformTabs = $('#platformTabs');
@@ -1017,6 +1019,8 @@
       });
     }
     if (els.btnStop) els.btnStop.addEventListener('click', stopStreaming);
+    if (els.btnComposerSmaller) els.btnComposerSmaller.addEventListener('click', () => adjustComposerHeight(-48));
+    if (els.btnComposerLarger) els.btnComposerLarger.addEventListener('click', () => adjustComposerHeight(48));
     if (els.btnAttach && els.fileInput) els.btnAttach.addEventListener('click', () => els.fileInput.click());
     if (els.fileInput) els.fileInput.addEventListener('change', () => {
       const incoming = [...(els.fileInput.files || [])];
@@ -1164,6 +1168,15 @@
     if (!els.messageInput) return;
     els.messageInput.style.height = 'auto';
     els.messageInput.style.height = Math.min(180, Math.max(30, els.messageInput.scrollHeight)) + 'px';
+  }
+
+  function adjustComposerHeight(delta) {
+    if (!els.messageInput) return;
+    const min = 48;
+    const max = Math.min(420, Math.round(window.innerHeight * 0.42));
+    const current = Math.round(els.messageInput.getBoundingClientRect().height || min);
+    els.messageInput.style.height = Math.max(min, Math.min(max, current + delta)) + 'px';
+    els.messageInput.focus({ preventScroll: true });
   }
 
   function updateCharCount() {
