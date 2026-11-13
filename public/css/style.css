@@ -1031,3 +1031,40 @@ body {
 @media (max-width: 640px) {
   .composer-size-controls button { width: 30px; height: 30px; }
 }
+
+
+/* Subtle AI mascot watermark behind the chat interface. */
+body { isolation: isolate; }
+.ai-mascot-bg {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  inset-inline-end: max(3vw, calc((100vw - 58rem) / 2));
+  top: 22%;
+  width: min(36vw, 390px);
+  color: var(--accent);
+  opacity: .075;
+  filter: drop-shadow(0 12px 36px color-mix(in srgb, var(--accent) 20%, transparent));
+}
+.ai-mascot-bg svg { display: block; width: 100%; height: auto; }
+.composer-size-controls { gap: 6px; }
+.composer-size-hint {
+  color: var(--mut);
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: nowrap;
+  padding-inline-end: 2px;
+}
+@media (max-width: 640px) {
+  .ai-mascot-bg {
+    width: min(62vw, 270px);
+    inset-inline-end: 2vw;
+    top: 29%;
+    opacity: .055;
+  }
+  .composer-size-hint { font-size: 9px; }
+  .composer-size-controls { gap: 4px; }
+}
+@media (max-width: 380px) {
+  .composer-size-hint { font-size: 8px; }
+}
