@@ -1018,3 +1018,16 @@ body {
   .c-tools { overflow-x: auto; }
   .foot-hint { display: none; }
 }
+
+
+/* Composer size controls — usable on touch screens where textarea drag handles are limited. */
+.composer-size-controls { display: inline-flex; align-items: center; gap: 4px; flex: none; }
+.composer-size-controls button {
+  width: 26px; height: 25px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line-soft); border-radius: 7px; color: var(--ink-2);
+  background: var(--surface-2); font-size: 15px; line-height: 1;
+}
+.composer-size-controls button:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 640px) {
+  .composer-size-controls button { width: 30px; height: 30px; }
+}
