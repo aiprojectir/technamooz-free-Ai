@@ -1039,7 +1039,6 @@
     });
     if (els.messageInput) {
       els.messageInput.addEventListener('input', () => {
-        resizeInput();
         updateCharCount();
       });
       els.messageInput.addEventListener('keydown', (e) => {
