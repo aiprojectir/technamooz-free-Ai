@@ -1,6 +1,6 @@
 // ============================================================
-//  Technamooz AI — technamooz-ai-version1.0.0
-//  Author: Amir Parsa (امیر پارسا)
+//  KLV-GPT — KLV-GPT-ai-version1.0.0
+//  Author: Majid Kalvandi (مجید کلوندی)
 //  src/routes/admin.js — secure admin API
 //  Login: /admin  (not linked from the public chat page)
 // ============================================================
@@ -570,7 +570,7 @@ async function telegramTest(request, env) {
   if (!tg.token) return jsonResp({ ok: false, error: 'توکن ربات تنظیم نشده است.' }, 400);
   const admins = await getTgAdmins(env);
   if (!admins.length) return jsonResp({ ok: false, error: 'ابتدا شناسهٔ عددی ادمین تلگرام را ذخیره کنید.' }, 400);
-  const text = String(body.text || '✅ پیام آزمایشی تکناموز — اتصال ربات برقرار است.').slice(0, 2000);
+  const text = String(body.text || '✅ پیام آزمایشی کلو جی‌پی‌تی — اتصال ربات برقرار است.').slice(0, 2000);
   const results = [];
   for (const id of admins) {
     const r = await tgSendMessage(tg.token, id, text);

@@ -1,8 +1,8 @@
 {
-  "name": "technamooz-ai",
+  "name": "KLV-GPT-ai",
   "version": "1.0.0",
-  "description": "Technamooz AI — technamooz-ai-version1.0.0 — Professional AI chat platform on Cloudflare Workers: web chat + Telegram bot + admin panel. Providers: Cloudflare Workers AI, OpenRouter, OrcaRouter, OneRouter. Author: Amir Parsa (امیر پارسا).",
-  "author": "Amir Parsa (امیر پارسا)",
+  "description": "KLV-GPT — KLV-GPT-ai-version1.0.0 — Professional AI chat platform on Cloudflare Workers: web chat + Telegram bot + admin panel. Providers: Cloudflare Workers AI, OpenRouter, OrcaRouter, OneRouter. Author: Majid Kalvandi (مجید کلوندی).",
+  "author": "Majid Kalvandi (مجید کلوندی)",
   "license": "MIT",
   "private": true,
   "type": "module",

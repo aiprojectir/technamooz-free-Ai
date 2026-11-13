@@ -1,6 +1,6 @@
 // ============================================================
-//  Technamooz AI — technamooz-ai-version1.0.0
-//  Author: Amir Parsa (امیر پارسا)
+//  KLV-GPT — KLV-GPT-ai-version1.0.0
+//  Author: Majid Kalvandi (مجید کلوندی)
 //  src/index.js — Cloudflare Worker entry point
 //  Routes:
 //    /api/* + /health              → public chat API

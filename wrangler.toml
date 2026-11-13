@@ -1,8 +1,8 @@
 # ============================================================
-#  Technamooz AI — technamooz-ai-version1.0.0
-#  Developer / Author: Amir Parsa (امیر پارسا)
+#  KLV-GPT — KLV-GPT-ai-version1.0.0
+#  Developer / Author: Majid Kalvandi (مجید کلوندی)
 #  Platform: Cloudflare Workers (no server — 100% edge, free tier)
-#  Telegram: @technamooz   |   Support: @technamooz_support
+#  Telegram: @KLV-GPT   |   Support: @KLV-GPT_support
 # ------------------------------------------------------------
 #  Storage: Cloudflare KV (no D1 migrations needed — deploy-proof)
 #  AI providers (all four share the same chat/memory/persona core):
@@ -44,4 +44,4 @@ id = "e36cb7c4fb294b16959af90fce9ee509"
 
 [vars]
 APP_VERSION = "1.0.0"
-APP_NAME = "Technamooz AI"
+APP_NAME = "KLV-GPT"
