@@ -19,7 +19,7 @@
     { id: 'sand',   label: 'شن — کاغذ گرم',      swatch: '#a35c25', dark: false },
     { id: 'forest', label: 'جنگل — کاغذ سبز',    swatch: '#7fc79b', dark: true }
   ];
-  const THEME_KEY = 'tm-theme';
+  const THEME_KEY = 'tm-theme-v2';
   const PREFS_KEY = 'tm-prefs';
 
   // apply saved theme synchronously (before first paint in most cases)
@@ -28,9 +28,7 @@
       const saved = localStorage.getItem(THEME_KEY);
       const valid = THEMES.some((t) => t.id === saved);
       if (valid) document.documentElement.dataset.theme = saved;
-      else if (!window.matchMedia || !window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.dataset.theme = 'day';
-      }
+      else document.documentElement.dataset.theme = 'klv';
     } catch { /* ignore */ }
   })();
 
@@ -256,7 +254,7 @@
     const meta = $('meta[name="theme-color"]');
     if (!meta) return;
     const colors = {
-      night: '#0c0e12', day: '#fafaf7', sea: '#0a1420', sand: '#f2ecdf', forest: '#0d1712'
+      night: '#0c0e12', day: '#fafaf7', sea: '#0a1420', sand: '#f2ecdf', forest: '#0d1712', klv: '#071d4a'
     };
     meta.setAttribute('content', colors[theme] || colors.night);
   }
