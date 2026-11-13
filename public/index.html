@@ -69,12 +69,8 @@
   <!-- ============================ chat stage ============================ -->
   <main class="stage">
     <div class="col">
-      <section id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="گفتگو"></section>
-    </div>
-  </main>
-
-  <!-- ============================ composer ============================ -->
-  <div class="dock">
+      <!-- ============================ composer ============================ -->
+      <div class="dock">
     <form id="composerForm" class="composer" autocomplete="off">
       <div class="c-tools">
         <button id="btnDeep" class="tool-btn" type="button" title="پاسخ بلندتر، عمیق‌تر و حسابرسی‌شده">
@@ -83,6 +79,10 @@
         <button id="btnNewChat" class="tool-btn" type="button" title="شروع گفتگوی تازه">✚ گفتگوی جدید</button>
         <button id="btnReset" class="tool-btn" type="button" title="حافظه و تاریخچه">🧹 پاک‌سازی</button>
         <span id="streamState" class="stream-state" aria-live="polite"></span>
+        <div class="composer-size-controls" role="group" aria-label="تنظیم اندازه کادر پیام">
+          <button id="btnComposerSmaller" type="button" title="کوچک‌تر کردن کادر پیام" aria-label="کوچک‌تر">−</button>
+          <button id="btnComposerLarger" type="button" title="بزرگ‌تر کردن کادر پیام" aria-label="بزرگ‌تر">＋</button>
+        </div>
       </div>
       <input id="fileInput" type="file" hidden multiple accept="image/png,image/jpeg,image/webp,application/pdf,.docx,.xlsx,.txt,.md,.csv" />
       <div id="attachmentList" class="attachment-list" aria-live="polite" hidden></div>
@@ -100,8 +100,11 @@
         <span id="charCount" dir="ltr">0 / 24000</span>
         <span class="foot-hint">کلو جی‌پی‌تی ممکن است اشتباه کند؛ اطلاعات حیاتی را راستی‌آزمایی کن.</span>
       </div>
-    </form>
-  </div>
+      </form>
+      </div>
+      <section id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="گفتگو"></section>
+    </div>
+  </main>
 
   <!-- ============================ footer ============================ -->
   <footer class="foot">
