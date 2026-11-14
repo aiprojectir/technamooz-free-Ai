@@ -104,6 +104,7 @@
   <main class="stage">
     <div class="col">
       <!-- ============================ composer ============================ -->
+      <section id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="گفتگو"></section>
       <div class="dock">
     <form id="composerForm" class="composer" autocomplete="off">
       <div class="c-tools">
@@ -114,7 +115,7 @@
         <button id="btnReset" class="tool-btn" type="button" title="حافظه و تاریخچه">🧹 پاک‌سازی</button>
         <span id="streamState" class="stream-state" aria-live="polite"></span>
         <div class="composer-size-controls" role="group" aria-label="تنظیم اندازه کادر پیام">
-          <span class="composer-size-hint">از این دکمه‌ها برای تغییر اندازه استفاده کن</span>
+          <span class="composer-size-hint">از این دکمه‌ها برای تغییر اندازه باکس چت استفاده کنید</span>
           <button id="btnComposerSmaller" type="button" title="کوچک‌تر کردن کادر پیام" aria-label="کوچک‌تر">−</button>
           <button id="btnComposerLarger" type="button" title="بزرگ‌تر کردن کادر پیام" aria-label="بزرگ‌تر">＋</button>
         </div>
@@ -137,7 +138,7 @@
       </div>
       </form>
       </div>
-      <section id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="گفتگو"></section>
+
     </div>
   </main>
 
