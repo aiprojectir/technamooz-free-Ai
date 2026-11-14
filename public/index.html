@@ -22,37 +22,69 @@
 </head>
 <body>
   <div class="ai-mascot-bg" aria-hidden="true">
-    <svg viewBox="0 0 360 390" role="presentation">
+    <svg viewBox="0 0 500 540" role="presentation" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="mascotShell" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="currentColor" stop-opacity=".72"/>
-          <stop offset=".52" stop-color="currentColor" stop-opacity=".28"/>
-          <stop offset="1" stop-color="currentColor" stop-opacity=".58"/>
+        <linearGradient id="klvShell" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff"/>
+          <stop offset=".42" stop-color="#d9eaff"/>
+          <stop offset="1" stop-color="#8eb7ee"/>
         </linearGradient>
-        <linearGradient id="mascotFace" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="currentColor" stop-opacity=".34"/>
-          <stop offset="1" stop-color="currentColor" stop-opacity=".08"/>
+        <linearGradient id="klvShellShade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f8fcff"/>
+          <stop offset="1" stop-color="#8fb6e8"/>
         </linearGradient>
-        <filter id="mascotSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="7"/>
+        <linearGradient id="klvScreen" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#102a58"/>
+          <stop offset="1" stop-color="#06132f"/>
+        </linearGradient>
+        <linearGradient id="klvBlue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8cf0ff"/>
+          <stop offset=".5" stop-color="#24baff"/>
+          <stop offset="1" stop-color="#4779ff"/>
+        </linearGradient>
+        <filter id="klvRobotShadow" x="-35%" y="-35%" width="170%" height="180%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+          <feOffset dy="12" result="offset"/>
+          <feComponentTransfer><feFuncA type="linear" slope=".34"/></feComponentTransfer>
+          <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="klvEyeGlow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="7" result="glow"/>
+          <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
-      <circle cx="180" cy="180" r="145" fill="currentColor" opacity=".045"/>
-      <circle cx="180" cy="180" r="126" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 13" opacity=".25"/>
-      <path d="M180 20v26" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-      <circle cx="180" cy="17" r="11" fill="currentColor" opacity=".75"/>
-      <circle cx="180" cy="17" r="19" fill="currentColor" opacity=".18" filter="url(#mascotSoftGlow)"/>
-      <path d="M65 115q-27 0-27 28v56q0 28 27 28M295 115q27 0 27 28v56q0 28-27 28" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round" opacity=".8"/>
-      <rect x="47" y="70" width="266" height="210" rx="82" fill="url(#mascotShell)" stroke="currentColor" stroke-width="7"/>
-      <rect x="72" y="94" width="216" height="160" rx="60" fill="url(#mascotFace)" stroke="currentColor" stroke-width="3" opacity=".95"/>
-      <path d="M115 164q15-23 30 0M215 164q15-23 30 0" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-      <path d="M145 201q35 29 70 0" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      <circle cx="116" cy="190" r="7" fill="currentColor" opacity=".35"/>
-      <circle cx="244" cy="190" r="7" fill="currentColor" opacity=".35"/>
-      <path d="M145 282v20q0 17 17 17h36q17 0 17-17v-20" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/>
-      <path d="M117 314q-17 12-24 34l-4 16h73v-40M243 314q17 12 24 34l4 16h-73v-40" fill="url(#mascotShell)" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
-      <rect x="139" y="329" width="82" height="22" rx="11" fill="currentColor" opacity=".18"/>
-      <path d="M31 66l9-17 9 17 17 9-17 9-9 17-9-17-17-9zM310 275l6-12 6 12 12 6-12 6-6 12-6-12-12-6z" fill="currentColor" opacity=".48"/>
+      <ellipse cx="240" cy="492" rx="175" ry="24" fill="#061b48" opacity=".24"/>
+      <g filter="url(#klvRobotShadow)">
+        <!-- torso and shoulders -->
+        <path d="M112 444c12-70 56-108 130-108s118 38 130 108l8 42H104z" fill="url(#klvShell)" stroke="#a8c9f4" stroke-width="7"/>
+        <path d="M175 344c8 29 30 43 67 43s59-14 67-43" fill="none" stroke="#789bd0" stroke-width="16" stroke-linecap="round"/>
+        <rect x="189" y="378" width="106" height="80" rx="26" fill="url(#klvScreen)" stroke="#9cc7fa" stroke-width="6"/>
+        <text x="242" y="425" fill="#70eaff" font-size="22" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">KLV-GPT</text>
+        <!-- left arm -->
+        <path d="M125 386c-37 4-58 30-72 74l-13 42c-4 14 6 27 20 27h30c11 0 20-7 24-17l29-77" fill="url(#klvShell)" stroke="#a8c9f4" stroke-width="7"/>
+        <circle cx="113" cy="398" r="31" fill="#24477f" stroke="#8db9ed" stroke-width="7"/>
+        <!-- right arm pointing -->
+        <path d="M345 380c36-9 63-32 86-69l28-46c8-13 2-29-12-34-11-4-23 1-30 11l-32 43-45 24" fill="url(#klvShell)" stroke="#a8c9f4" stroke-width="7" stroke-linejoin="round"/>
+        <circle cx="357" cy="371" r="31" fill="#24477f" stroke="#8db9ed" stroke-width="7"/>
+        <path d="M411 270l25-42c7-12 21-16 31-8 9 7 10 19 4 29l-24 42" fill="url(#klvShell)" stroke="#a8c9f4" stroke-width="6" stroke-linecap="round"/>
+        <path d="M423 285l-5 19c-2 9 3 17 11 18 8 1 14-4 16-12l5-19" fill="url(#klvShell)" stroke="#a8c9f4" stroke-width="5"/>
+        <!-- neck -->
+        <rect x="199" y="306" width="82" height="55" rx="23" fill="#17315d" stroke="#789bd0" stroke-width="7"/>
+        <!-- head shell -->
+        <rect x="74" y="63" width="332" height="270" rx="112" fill="url(#klvShell)" stroke="#b9d5f7" stroke-width="8"/>
+        <path d="M99 130c28-55 77-79 151-79 67 0 119 23 146 72" fill="none" stroke="#fff" stroke-width="12" opacity=".62" stroke-linecap="round"/>
+        <!-- face screen -->
+        <rect x="111" y="103" width="258" height="196" rx="76" fill="url(#klvScreen)" stroke="#799bd0" stroke-width="6"/>
+        <path d="M150 188c17-31 43-31 60 0M270 188c17-31 43-31 60 0" fill="none" stroke="url(#klvBlue)" stroke-width="13" stroke-linecap="round" filter="url(#klvEyeGlow)"/>
+        <path d="M205 225c25 22 51 22 76 0" fill="none" stroke="url(#klvBlue)" stroke-width="12" stroke-linecap="round" filter="url(#klvEyeGlow)"/>
+        <!-- ear cups -->
+        <rect x="40" y="151" width="76" height="130" rx="36" fill="#23477e" stroke="url(#klvBlue)" stroke-width="11"/>
+        <rect x="364" y="151" width="76" height="130" rx="36" fill="#23477e" stroke="url(#klvBlue)" stroke-width="11"/>
+        <path d="M57 176v80M423 176v80" stroke="#9cecff" stroke-width="5" opacity=".65" stroke-linecap="round"/>
+      </g>
+      <!-- small luminous accents -->
+      <path d="M64 38l10-19 10 19 19 10-19 10-10 19-10-19-19-10z" fill="#9ceaff" opacity=".9" filter="url(#klvEyeGlow)"/>
+      <circle cx="438" cy="120" r="8" fill="#a4eaff" opacity=".9"/>
     </svg>
   </div>
 
