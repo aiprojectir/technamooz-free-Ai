@@ -1884,3 +1884,6 @@ html[data-theme="klv"] .foot {
   html[data-theme="klv"] #messageInput { min-height: 48px; font-size: 15px; }
   html[data-theme="klv"] .send-btn { width: 46px; height: 46px; }
 }
+
+/* Let the chat column fill the stage so the composer rests at the viewport bottom. */
+html[data-theme="klv"] .stage > .col { flex: 1 1 auto; }
