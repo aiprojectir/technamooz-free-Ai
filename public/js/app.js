@@ -287,9 +287,8 @@
   }
 
   function updateConnection() {
-    if (!els.connDot) return;
     const ready = (state.config && state.config.providers) ? hasReadyProvider() : false;
-    els.connDot.className = 'conn-dot ' + (ready ? 'on' : 'off');
+    if (els.connDot) els.connDot.className = 'conn-dot ' + (ready ? 'on' : 'off');
     if (els.chipModel) els.chipModel.classList.toggle('conn-on', ready);
     if (els.connText) {
       const provider = readyPlatform();

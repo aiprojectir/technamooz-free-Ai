@@ -1887,3 +1887,29 @@ html[data-theme="klv"] .foot {
 
 /* Let the chat column fill the stage so the composer rests at the viewport bottom. */
 html[data-theme="klv"] .stage > .col { flex: 1 1 auto; }
+
+
+/* KLV topbar: model and agent selectors occupy the former brand position. */
+html[data-theme="klv"] .topbar-in {
+  justify-content: flex-start;
+}
+html[data-theme="klv"] .top-chips {
+  margin-inline: 0 auto;
+  justify-content: flex-start;
+}
+@media (max-width: 640px) {
+  html[data-theme="klv"] .topbar-in {
+    flex-wrap: nowrap;
+    padding: 6px 12px;
+  }
+  html[data-theme="klv"] .top-chips {
+    order: 0;
+    width: auto;
+    max-width: 100%;
+    margin-inline: 0 auto;
+    justify-content: flex-start;
+  }
+  html[data-theme="klv"] .chip {
+    max-width: min(46vw, 220px);
+  }
+}
